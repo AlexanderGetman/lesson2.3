@@ -4,7 +4,6 @@ $filename = __DIR__.DIRECTORY_SEPARATOR.'test'.DIRECTORY_SEPARATOR.$_GET["test"]
 
 if (!file_exists($filename)) {
     http_response_code(404);
-    exit("404: TEST NOT FOUND");
 }
 
 $json = file_get_contents($filename);
