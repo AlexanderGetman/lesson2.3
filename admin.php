@@ -1,17 +1,15 @@
 <?php
 
-if(isset($_POST['submit'])){
-    header('Location: list.php');
-}
-
 $dest = __DIR__.'/test'.'/test'.$_FILES['test']['name'];
 
 if (move_uploaded_file($_FILES['test']['tmp_name'], $dest)) {
-    echo "Файл загружен";
+    if(isset($_POST['submit'])){
+        header('Location: list.php');
+        exit;
+    }
 } else {
     echo "Файл не загружен";
 }
-
 
 
 ?>
